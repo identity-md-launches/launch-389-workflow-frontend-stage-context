@@ -1,0 +1,9 @@
+# Explicit path budget: web/.gitignore, <= 1024 bytes.
+# Generated dependencies and caches at every nesting level.
+**/node_modules/
+**/.cache/
+**/.vite/
+**/.npm/
+**/test-results/
+**/playwright-report/
+**/*.tgz

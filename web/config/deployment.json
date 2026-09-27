@@ -1,0 +1,54 @@
+{
+  "chainId": 11155111,
+  "repoUrl": "https://github.com/identity-md-launches/launch-310-whaletaxhook",
+  "version": 1,
+  "launchId": "543763e2-628b-4091-93d9-2fb043124609",
+  "manifest": {
+    "hook": {
+      "contract": "WhaleTaxHook",
+      "permissions": [
+        "beforeSwap",
+        "afterSwap",
+        "afterSwapReturnDelta"
+      ],
+      "constructorArgs": [
+        "0xE03A1074c86CFeDd5C142C4F04F1a1536e203543"
+      ]
+    },
+    "kind": "univ4_hook",
+    "pool": {
+      "fee": 3000,
+      "tickSpacing": 60,
+      "initialPrice": "176653655955546853378467418172841",
+      "pairedCurrency": "0x0000000000000000000000000000000000000000"
+    },
+    "notes": "Technical description of src/WhaleTaxHook.sol and src/WhaleToken.sol; ABI exports are docs/abi/WhaleTaxHook.json and docs/abi/WhaleToken.json. The hook takes only the approved Sepolia PoolManager address; the token constructor takes no arguments. Hook permissions are exactly beforeSwap, afterSwap and afterSwapReturnDelta, with address bits 0x00C4 validated in the constructor; deployment requires a matching CREATE2 address. The intended pool has currency0 native ETH and currency1 WHAL. The initialPrice adopts the existing launch rehearsal's tick 154200: TickMath.getSqrtPriceAtTick(154200), encoded as decimal sqrtPriceX96, approximately 4,971,484.53 WHAL per ETH. This price supports the rehearsed one-sided WHAL liquidity range below the initial tick and a first buy into an ETH-less pool. The pool's static LP fee is 3000 (0.30%), separate from the hook tax. beforeSwap records the pre-swap sqrt price in transient storage keyed by PoolId; afterSwap clears it and computes the price move m in bps from the squared price ratio using FullMath. The tax rate is 30 + floor(470 * min(m, 500) / 500) bps, capped at 500 bps. A positive afterSwap delta charges the unspecified leg: output for exact-in, additional input for exact-out. Fees round down and settle as ERC-6909 claims minted to the hook. Permissionless burnFees(currency) transfers accrued claims to 0x000000000000000000000000000000000000dEaD inside unlockCallback; it does not withdraw underlying currency or reduce token supply. Active callbacks accept only the PoolManager. There are no initialize or liquidity permissions. Pools with non-native currency0 receive zero swap deltas and no accounting changes; other native-ETH pools attached to this hook are taxed too. Fee balances are aggregated per currency. The tax is per swap, so splitting a trade can lower it; hookData is ignored. This manifest describes constructor and pool inputs, not launch policy or authorization. Source publication, signed artifact linkage, admission and deployment are later service responsibilities; no service outcome is asserted here.",
+    "token": {
+      "name": "Whale Tax",
+      "symbol": "WHAL",
+      "contract": "WhaleToken",
+      "decimals": 18
+    }
+  },
+  "contracts": [
+    {
+      "name": "WhaleToken",
+      "txHash": "0xf1f6b25c254c5654fcff5193c1024af9330e9cf60294fd81291176b51dc0ccad",
+      "abiHash": "f36d2fe28b62f817a4fba0b78bb501b41895eada3982280273c063ad8183f577",
+      "address": "0xfe00cb1154a70ddc6276de8b8f16fd5d747248ae",
+      "blockNumber": 11791653,
+      "creationCodeHash": "4f3f2e50702c745f4db6962ed84cecd5e7632bdfe002974ba21a5ada23903e94"
+    },
+    {
+      "name": "WhaleTaxHook",
+      "txHash": "0xf1f6b25c254c5654fcff5193c1024af9330e9cf60294fd81291176b51dc0ccad",
+      "abiHash": "f6bd1a285ecb9094ac13d9151214bbdcddfc1b10f09b0348b084663238a12621",
+      "address": "0x8e587e7fb490084f3a5a2117224abed72a8cc0c4",
+      "blockNumber": 11791653,
+      "creationCodeHash": "9ba68d521571ec964da642b65cd1ced30a2906f5236a9fa999159f229eb918f0"
+    }
+  ],
+  "sourceCommit": "07a9d5d68a4e1416289e4c168a4761ec627078a9",
+  "abiInstructions": "Build ABIs from this exact source commit; compare canonicalKeccak(abi) with abiHash. Verify deployed code on the stated chain before enabling transactions.",
+  "attestationHash": "f507fd65b2e10da6a1f9a2937ae72fc8377743d7349a55618810994c0b1b4457"
+}

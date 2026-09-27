@@ -1,0 +1,195 @@
+[
+  {
+    "name": "swap",
+    "type": "function",
+    "stateMutability": "payable",
+    "inputs": [
+      {
+        "type": "tuple",
+        "name": "key",
+        "components": [
+          {
+            "type": "address",
+            "name": "currency0"
+          },
+          {
+            "type": "address",
+            "name": "currency1"
+          },
+          {
+            "type": "uint24",
+            "name": "fee"
+          },
+          {
+            "type": "int24",
+            "name": "tickSpacing"
+          },
+          {
+            "type": "address",
+            "name": "hooks"
+          }
+        ]
+      },
+      {
+        "type": "tuple",
+        "name": "params",
+        "components": [
+          {
+            "type": "bool",
+            "name": "zeroForOne"
+          },
+          {
+            "type": "int256",
+            "name": "amountSpecified"
+          },
+          {
+            "type": "uint160",
+            "name": "sqrtPriceLimitX96"
+          }
+        ]
+      },
+      {
+        "type": "tuple",
+        "name": "testSettings",
+        "components": [
+          {
+            "type": "bool",
+            "name": "takeClaims"
+          },
+          {
+            "type": "bool",
+            "name": "settleUsingBurn"
+          }
+        ]
+      },
+      {
+        "type": "bytes",
+        "name": "hookData"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "int256",
+        "name": "delta"
+      }
+    ]
+  },
+  {
+    "name": "manager",
+    "type": "function",
+    "stateMutability": "view",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "name": "getSlot0",
+    "type": "function",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "poolId"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint160",
+        "name": "sqrtPriceX96"
+      },
+      {
+        "type": "int24",
+        "name": "tick"
+      },
+      {
+        "type": "uint24",
+        "name": "protocolFee"
+      },
+      {
+        "type": "uint24",
+        "name": "lpFee"
+      }
+    ]
+  },
+  {
+    "name": "getLiquidity",
+    "type": "function",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "poolId"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint128",
+        "name": "liquidity"
+      }
+    ]
+  },
+  {
+    "name": "quoteExactInputSingle",
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {
+        "type": "tuple",
+        "name": "params",
+        "components": [
+          {
+            "type": "tuple",
+            "name": "poolKey",
+            "components": [
+              {
+                "type": "address",
+                "name": "currency0"
+              },
+              {
+                "type": "address",
+                "name": "currency1"
+              },
+              {
+                "type": "uint24",
+                "name": "fee"
+              },
+              {
+                "type": "int24",
+                "name": "tickSpacing"
+              },
+              {
+                "type": "address",
+                "name": "hooks"
+              }
+            ]
+          },
+          {
+            "type": "bool",
+            "name": "zeroForOne"
+          },
+          {
+            "type": "uint128",
+            "name": "exactAmount"
+          },
+          {
+            "type": "bytes",
+            "name": "hookData"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "amountOut"
+      },
+      {
+        "type": "uint256",
+        "name": "gasEstimate"
+      }
+    ]
+  }
+]

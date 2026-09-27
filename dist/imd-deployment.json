@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "launchId": "543763e2-628b-4091-93d9-2fb043124609",
+  "chainId": 11155111,
+  "sourceCommit": "07a9d5d68a4e1416289e4c168a4761ec627078a9",
+  "attestationHash": "f507fd65b2e10da6a1f9a2937ae72fc8377743d7349a55618810994c0b1b4457",
+  "contracts": [
+    {
+      "name": "WhaleToken",
+      "address": "0xfe00cb1154a70ddc6276de8b8f16fd5d747248ae",
+      "abiHash": "f36d2fe28b62f817a4fba0b78bb501b41895eada3982280273c063ad8183f577",
+      "abiPath": "abi/WhaleToken.json"
+    },
+    {
+      "name": "WhaleTaxHook",
+      "address": "0x8e587e7fb490084f3a5a2117224abed72a8cc0c4",
+      "abiHash": "f6bd1a285ecb9094ac13d9151214bbdcddfc1b10f09b0348b084663238a12621",
+      "abiPath": "abi/WhaleTaxHook.json"
+    }
+  ],
+  "assets": [
+    {
+      "path": "abi/Uniswap.json",
+      "sha256": "d6e59530a1c627bbdaa3c14e72c41de7990b90ebcb58dfdba7b07164211bc86f"
+    },
+    {
+      "path": "abi/WhaleTaxHook.json",
+      "sha256": "06cf25d49c6c5a8fe5bda8447ed11026b09ce9c737265bf15e03cf4f7873ee48"
+    },
+    {
+      "path": "abi/WhaleToken.json",
+      "sha256": "c0dab602694964041a5c7124536ce5fe6c9d1d057c2f202b73f659a1e1adb554"
+    },
+    {
+      "path": "assets/index-BbSrOQFN.js",
+      "sha256": "3abe77263706a85bb1dcfc478a4e76e43a1d9d2e99821765fe659638eefa29ba"
+    },
+    {
+      "path": "assets/index-DyF9SeoG.css",
+      "sha256": "6080ebe8a2d0f5dc8b8e2a2c60effc6118fd26390209c2ecb7b85e63a7200e65"
+    },
+    {
+      "path": "index.html",
+      "sha256": "4f7f13b40d723d9d7e16ca43bc78c5a1e8f5170a3cb614bcc07f20fab403e7d3"
+    },
+    {
+      "path": "simulation/PreviewLens.json",
+      "sha256": "ed0398e868ab5b55b226cb2b2da7587c5fcb36f89f8161aa70b60b5a3d6b2f19"
+    }
+  ],
+  "network": {
+    "chainId": 11155111,
+    "name": "Sepolia",
+    "testnet": true,
+    "rpcUrls": [
+      "https://ethereum-sepolia-rpc.publicnode.com",
+      "https://rpc.sepolia.ethpandaops.io",
+      "https://sepolia.rpc.sentio.xyz"
+    ],
+    "explorer": "https://sepolia.etherscan.io",
+    "nativeCurrency": {
+      "name": "Sepolia Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "faucets": [
+      "https://cloud.google.com/application/web3/faucet/ethereum/sepolia",
+      "https://www.alchemy.com/faucets/ethereum-sepolia"
+    ],
+    "uniswapV4": {
+      "poolManager": "0xe03a1074c86cfedd5c142c4f04f1a1536e203543",
+      "universalRouter": "0x3a9d48ab9751398bbfa63ad67599bb04e4bdf98b",
+      "quoter": "0x61b3f2011a92d183c7dbadbda940a7555ccf9227",
+      "stateView": "0xe1dd9c3fa50edb962e442f60dfbc432e24537e4c",
+      "positionManager": "0x429ba70129df741b2ca2a85bc3a2a3328e5c09b4",
+      "permit2": "0x000000000022d473030f116ddee9f6b43ac78ba3"
+    }
+  },
+  "walletAddChain": {
+    "chainId": "0xaa36a7",
+    "chainName": "Sepolia",
+    "rpcUrls": [
+      "https://ethereum-sepolia-rpc.publicnode.com",
+      "https://rpc.sepolia.ethpandaops.io",
+      "https://sepolia.rpc.sentio.xyz"
+    ],
+    "nativeCurrency": {
+      "name": "Sepolia Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "blockExplorerUrls": [
+      "https://sepolia.etherscan.io"
+    ]
+  },
+  "pool": {
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "176653655955546853378467418172841",
+    "pairedCurrency": "0x0000000000000000000000000000000000000000"
+  },
+  "deploymentBlock": 11791653,
+  "integrations": {
+    "poolSwapTest": "0x9b6b46e2c869aa39918db7f52f5557fe577b6eee",
+    "poolSwapTestSource": "https://developers.uniswap.org/docs/protocols/v4/deployments",
+    "previewLens": "0x000000000000000000000000000000000000c0de",
+    "previewLensArtifact": "simulation/PreviewLens.json",
+    "abiPath": "abi/Uniswap.json"
+  }
+}

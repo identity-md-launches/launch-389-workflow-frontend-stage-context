@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-27T07:25:04.375Z",
+  "console": [
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  ],
+  "failed": [
+    {
+      "url": "https://ethereum-sepolia-rpc.publicnode.com/",
+      "reason": "net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "url": "https://rpc.sepolia.ethpandaops.io/",
+      "reason": "net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "url": "https://sepolia.rpc.sentio.xyz/",
+      "reason": "net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "url": "https://ethereum-sepolia-rpc.publicnode.com/",
+      "reason": "net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "url": "https://rpc.sepolia.ethpandaops.io/",
+      "reason": "net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "url": "https://sepolia.rpc.sentio.xyz/",
+      "reason": "net::ERR_INTERNET_DISCONNECTED"
+    }
+  ],
+  "mode": "Static bytes intercepted; public RPC requests attempted from Chromium; no wallet",
+  "error": "locator.waitFor: Timeout 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Live · block') to be visible\u001b[22m\n"
+}

@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-27T07:11:43.785Z",
+  "transactionsBroadcast": 0,
+  "code": [
+    {
+      "address": "0xfe00cb1154a70ddc6276de8b8f16fd5d747248ae",
+      "codeBytes": 1753
+    },
+    {
+      "address": "0x8e587e7fb490084f3a5a2117224abed72a8cc0c4",
+      "codeBytes": 6200
+    },
+    {
+      "address": "0xe03a1074c86cfedd5c142c4f04f1a1536e203543",
+      "codeBytes": 24009
+    },
+    {
+      "address": "0xe1dd9c3fa50edb962e442f60dfbc432e24537e4c",
+      "codeBytes": 3531
+    },
+    {
+      "address": "0x61b3f2011a92d183c7dbadbda940a7555ccf9227",
+      "codeBytes": 5820
+    },
+    {
+      "address": "0x9b6b46e2c869aa39918db7f52f5557fe577b6eee",
+      "codeBytes": 6950
+    }
+  ],
+  "state": {
+    "block": "11791753",
+    "sqrt": "560227709747861399187319382274582",
+    "tick": 177284,
+    "lpFee": 3000,
+    "liquidity": "0",
+    "decimals": 18,
+    "symbol": "WHAL",
+    "supply": "1000000000000000000000000000",
+    "fees": [
+      {
+        "currency": "0x0000000000000000000000000000000000000000",
+        "accrued": "0",
+        "collected": "0",
+        "burned": "0",
+        "claims": "0"
+      },
+      {
+        "currency": "0xfe00cb1154a70ddc6276de8b8f16fd5d747248ae",
+        "accrued": "0",
+        "collected": "0",
+        "burned": "0",
+        "claims": "0"
+      }
+    ],
+    "rates": [
+      "30",
+      "265",
+      "500"
+    ]
+  },
+  "events": [],
+  "buyQuote": {
+    "amount": "1000000000000000",
+    "buy": true,
+    "block": "11791753",
+    "time": 1790493104126,
+    "delta": "-340282366920938463463374607431718941685860629360650220",
+    "before": "560227709747861399187319382274582",
+    "after": "558956379877294085639152022133372",
+    "move": "45",
+    "rate": "72",
+    "fee": "357315013097772565792",
+    "input": "1000000000000000",
+    "output": "49269770139370639349780",
+    "limit": "557557237808372677895142421460272"
+  },
+  "sellQuoteError": "No executable liquidity for this direction and amount.",
+  "rpc": "ethereum-sepolia-rpc.publicnode.com"
+}

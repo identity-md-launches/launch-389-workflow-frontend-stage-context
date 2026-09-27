@@ -1,0 +1,33 @@
+{
+  "name": "whale-tax-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && vite",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/prepare.mjs && vite build && node scripts/manifest.mjs",
+    "preview": "vite preview",
+    "test": "node --import tsx --test tests/core.test.ts",
+    "test:browser": "node tests/browser.mjs",
+    "check:live": "node --import tsx scripts/check-live.ts",
+    "check:export": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "viem": "2.38.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.0",
+    "@playwright/test": "1.56.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "5.0.4",
+    "prettier": "3.6.2",
+    "solc": "0.8.26",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite": "7.1.12"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "poolSwapTest": "0x9b6b46e2c869aa39918db7f52f5557fe577b6eee",
+  "poolSwapTestSource": "https://developers.uniswap.org/docs/protocols/v4/deployments",
+  "previewLens": "0x000000000000000000000000000000000000c0de",
+  "previewLensArtifact": "simulation/PreviewLens.json",
+  "abiPath": "abi/Uniswap.json"
+}
