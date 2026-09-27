@@ -1,0 +1,27 @@
+{
+  "kind": "univ4_hook",
+  "hook": {
+    "contract": "WhaleTaxHook",
+    "constructorArgs": [
+      "0xE03A1074c86CFeDd5C142C4F04F1a1536e203543"
+    ],
+    "permissions": [
+      "beforeSwap",
+      "afterSwap",
+      "afterSwapReturnDelta"
+    ]
+  },
+  "token": {
+    "contract": "WhaleToken",
+    "name": "Whale Tax",
+    "symbol": "WHAL",
+    "decimals": 18
+  },
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "176653655955546853378467418172841"
+  },
+  "notes": "Technical description of src/WhaleTaxHook.sol and src/WhaleToken.sol; ABI exports are docs/abi/WhaleTaxHook.json and docs/abi/WhaleToken.json. The hook takes only the approved Sepolia PoolManager address; the token constructor takes no arguments. Hook permissions are exactly beforeSwap, afterSwap and afterSwapReturnDelta, with address bits 0x00C4 validated in the constructor; deployment requires a matching CREATE2 address. The intended pool has currency0 native ETH and currency1 WHAL. The initialPrice adopts the existing launch rehearsal's tick 154200: TickMath.getSqrtPriceAtTick(154200), encoded as decimal sqrtPriceX96, approximately 4,971,484.53 WHAL per ETH. This price supports the rehearsed one-sided WHAL liquidity range below the initial tick and a first buy into an ETH-less pool. The pool's static LP fee is 3000 (0.30%), separate from the hook tax. beforeSwap records the pre-swap sqrt price in transient storage keyed by PoolId; afterSwap clears it and computes the price move m in bps from the squared price ratio using FullMath. The tax rate is 30 + floor(470 * min(m, 500) / 500) bps, capped at 500 bps. A positive afterSwap delta charges the unspecified leg: output for exact-in, additional input for exact-out. Fees round down and settle as ERC-6909 claims minted to the hook. Permissionless burnFees(currency) transfers accrued claims to 0x000000000000000000000000000000000000dEaD inside unlockCallback; it does not withdraw underlying currency or reduce token supply. Active callbacks accept only the PoolManager. There are no initialize or liquidity permissions. Pools with non-native currency0 receive zero swap deltas and no accounting changes; other native-ETH pools attached to this hook are taxed too. Fee balances are aggregated per currency. The tax is per swap, so splitting a trade can lower it; hookData is ignored. This manifest describes constructor and pool inputs, not launch policy or authorization. Source publication, signed artifact linkage, admission and deployment are later service responsibilities; no service outcome is asserted here."
+}
