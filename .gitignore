@@ -1,0 +1,7 @@
+# Foundry build artifacts
+out/
+cache/
+broadcast/
+
+# Local scratch tests (deleted before verification)
+test/scratch/
